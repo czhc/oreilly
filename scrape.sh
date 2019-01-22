@@ -1,4 +1,7 @@
 #!/bin/bash
+
+[[ $# -eq 0 ]] && { echo "Usage: FILE=filename TOKEN=some-token [FORMAT=epub] [DIR=out] ./scrape.sh"; exit 1;}
+
 [[ -f ./env.sh ]] && source ./env.sh
 [[ -z $TOKEN ]] && echo "missing TOKEN" && exit 1
 [[ -z $FILE ]] && echo "missing FILE" && exit 1
